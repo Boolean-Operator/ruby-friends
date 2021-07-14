@@ -1,17 +1,15 @@
-
+<% if user_signed_in? %>
 
 <h1>Friend List</h1>
 
 <table class="table table-striped table-bordered border-success">
   <thead class="thead-dark">
     <tr>
-      <th>First name</th>
-      <th>Last name</th>
+      <th>Name</th>
       <th>Email</th>
       <th>Phone</th>
       <th>Twitter</th>
-      <th>User Id</th>
-      <th colspan="3"></th>
+      <th></th>
     </tr>
   </thead>
 
@@ -19,15 +17,13 @@
     <% @friends.each do |friend| %>
       <% if friend.user == current_user %>
       <tr>
-        <td><%= friend.first_name %></td>
-        <td><%= friend.last_name %></td>
+        <td >
+          <%= link_to friend.first_name + ' '+ friend.last_name, friend %>
+        </td>
         <td><%= friend.email %></td>
         <td><%= friend.phone %></td>
         <td><%= friend.twitter %></td>
-        <td><%= friend.user_id %></td>
-        <td><%= link_to 'Show', friend %></td>
-        <td><%= link_to 'Edit', edit_friend_path(friend) %></td>
-        <td><%= link_to 'Destroy', friend, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Delete', friend, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-outline-danger btn-sm" %></td>
       </tr>
       <% end %>
     <% end %>
@@ -37,3 +33,11 @@
 <br>
 
 <%= link_to 'New Friend', new_friend_path, class: "btn btn-secondary" %>
+<% else %>
+<h1>The Friends App!</h1>
+<p>A free and easy way to keep track of all your friends information.  No stalking, please.</p>
+
+<p>To set started using the Friends app, just create an account</p>
+<%= link_to 'Sign Up', new_user_registration_path, class: "btn btn-success" %>
+
+<% end %>
