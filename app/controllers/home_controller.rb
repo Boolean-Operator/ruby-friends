@@ -3,5 +3,6 @@ class HomeController < ApplicationController
   end
 
   def about
+    @about_me = "This is the about page......"
   end
 end

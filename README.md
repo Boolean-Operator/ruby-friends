@@ -1,25 +1,12 @@
-# README
-# ruby-friends
+# Friends App!
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Hi, my name is Mark Graybill and this is my Friends List Application.
+It is built with Ruby on Rails with an sqlite3 database and Bootstrap styling.
 
-Things you may want to cover:
+* Ruby version: v6.0.4
 
-* Ruby version: 6.0.4
-
-* System dependencies: 
-
-* Configuration
+* Bootstrap v4.6
 
 * Database: sqlite3
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
 
 * ...
